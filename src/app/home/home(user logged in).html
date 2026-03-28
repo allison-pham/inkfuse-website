@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InkFuse Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1f2e;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 20px 0;
+            font-weight: 600;
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .event-name {
+            font-size: 1.1em;
+        }
+
+        .event-details {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+        }
+
+        .date-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            color: #000;
+            text-align: right;
+            min-width: 120px;
+        }
+
+        .date-box.june { background-color: #a8e6ff; }
+        .date-box.july { background-color: #ffa8e6; }
+        .date-box.aug { background-color: #ffd6cc; }
+
+        .date-box .month {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .date-box .day {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .calendar-button {
+            background-color: #73daca;
+            color: #1a1f2e;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            width: 100%;
+            max-width: 200px;
+            margin: 30px auto;
+            display: block;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            aspect-ratio: 3/4;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .project-card .book-number {
+            margin-top: auto;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .project-card .book-title {
+            margin-bottom: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .projects-grid {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <span>InkFuse</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="notification">
+            Color Scheme is open to change, I just went with this one Becasue idk what to put here its just a blank space lmk what to do here
+        </div>
+
+        <div class="button-group">
+            <button class="button">Upload New Books</button>
+            <button class="button">View Sales Metrics</button>
+        </div>
+
+        <h2>Upcoming Events</h2>
+        <div class="events-list">
+            <div class="event-item">
+                <div class="event-info">
+                    <div class="event-name">&lt;Event name&gt;</div>
+                    <div class="event-details">[event details]</div>
+                </div>
+                <div class="date-box june">
+                    <span class="month">JUNE</span>
+                    <span class="day">24</span>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-info">
+                    <div class="event-name">&lt;Event name&gt;</div>
+                    <div class="event-details">[event details]</div>
+                </div>
+                <div class="date-box july">
+                    <span class="month">JULY</span>
+                    <span class="day">04</span>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-info">
+                    <div class="event-name">&lt;Event name&gt;</div>
+                    <div class="event-details">[event details]</div>
+                </div>
+                <div class="date-box july">
+                    <span class="month">JULY</span>
+                    <span class="day">05</span>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-info">
+                    <div class="event-name">&lt;Event name&gt;</div>
+                    <div class="event-details">[event details]</div>
+                </div>
+                <div class="date-box aug">
+                    <span class="month">AUG</span>
+                    <span class="day">07</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="calendar-button">Calendar</button>
+
+        <h2>Your Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="book-number">Book 1</div>
+                <div class="book-title">Title of Book1</div>
+            </div>
+            <div class="project-card">
+                <div class="book-number">Book 2</div>
+                <div class="book-title">Title of Book2</div>
+            </div>
+            <div class="project-card">
+                <div class="book-number">Book 3</div>
+                <div class="book-title">Title of Book3</div>
+            </div>
+            <div class="project-card">
+                <div class="book-number">Book 4</div>
+                <div class="book-title">Title of Book4</div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            © 2024 InkFuse, Incorporated
+            <div class="social-icons">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter/X">✖️</a>
+                <a href="#" title="Facebook">👤</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
